@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>express Movies</title>
-    <link rel="stylesheet" href="../style/style.css" />
+    <title>Liste des films</title>
   </head>
   <body>
+    <h1>Voici la liste des films disponibles</h1>
+
     <div class="central"><%- include('./partials/header') -%></div>
 
-    <h1>Express Movies</h1>
+    <span> <%= title %></span>
+    <div>
+      <% for(movie of movies) {%>
+      <div><%= movie.title %></div>
+      <% } %>
+    </div>
 
     <%- include('./partials/footer'); -%>
   </body>
