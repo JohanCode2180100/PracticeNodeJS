@@ -11,6 +11,8 @@ app.set("view engine", "ejs");
 
 //attention a l ordre des routes, get.id est plus specialise et viendra avant get/add
 
+
+
 app.get("/movies", (req, res) => {
   const title = "films francais";
   const frenchMovies = [
