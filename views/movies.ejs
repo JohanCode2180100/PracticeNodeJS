@@ -4,29 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Liste des films</title>
-    <link rel="stylesheet" href="../style/style.css" />
+    <link
+      href="
+https://cdn.jsdelivr.net/npm/@picocss/pico@1.5.10/css/pico.min.css
+"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <h1>Voici la liste des films disponibles</h1>
 
     <div class="central"><%- include('./partials/header') -%></div>
 
-    <span> <%= title %></span>
+  
+    <table>
+      <thead>
+        <th scope="col">Titre du film</th>
+      </thead>
+      <tbody>
+        <% for(movie of movies){%>
+          <tr> 
+            <td><%= movie.title %></td>
+            <% } %></tr>
+          
+
+    
+        
+      </tbody>
+    </table>
+
+
+    
     <div>
-      <% for(movie of movies) {%>
-      <div><%= movie.title %></div>
-      <% } %>
+     
     </div>
+    <article data-theme="'dark">
     <div class="form">
       <form action="/movies" method="POST">
         <label for="movieTitle">TITRE DU FILM</label>
         <input type="text" id="movieTitle" name="movieTitle" />
         <label for="movieYear">TITRE DU FILM</label>
         <input type="text" id="movieYear" name="movieYear" />
-        <button type="submit">AJOUTER UN FILN</button>
+        <button type="submit">AJOUTER UN FILM</button>
       </form>
+    </article>
     </div>
 
     <%- include('./partials/footer'); -%>
+
+    <script src="https://cdn.jsdelivr.net/npm/@picocss/pico@1.5.10/css/postcss.config.min.js"></script>
   </body>
 </html>
